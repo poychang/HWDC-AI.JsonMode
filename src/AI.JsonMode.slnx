@@ -1,0 +1,18 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/D1AskAI/">
+    <Project Path="BasicIAsk/BasicIAsk.csproj" Id="cfc5dadb-dfa2-4233-bd4c-9ae6d6775ae9" />
+  </Folder>
+  <Folder Name="/D2JsonMode/">
+    <Project Path="BasicJsonSchema/BasicJsonSchema.csproj" Id="7374a615-9b01-42ea-9608-1b7899374c3b" />
+  </Folder>
+  <Folder Name="/D3Platform/">
+    <Project Path="Client/Client.csproj" Id="a6332705-3edd-4525-85e8-5273371d7b62" />
+    <Project Path="Library/Library.csproj" Id="fcd87061-d58a-417b-add5-42564701285b" />
+    <Project Path="Server/Server.csproj" Id="832374be-ff0f-4c40-9fbf-ddebb8897502" />
+  </Folder>
+</Solution>

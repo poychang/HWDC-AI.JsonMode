@@ -1,0 +1,13 @@
+@Server_HostAddress = http://localhost:5170
+
+POST {{Server_HostAddress}}/request-to-ai/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Question": "What is the capital of France?",
+  "AnswerModelName": "QnA",
+  "AnswerModelSchema": "{\"type\":\"object\",\"properties\":{\"Question\":{\"type\":\"string\"},\"Answer\":{\"type\":\"string\"}},\"additionalProperties\":false,\"required\":[\"Question\",\"Answer\"]}"
+}
+
+###
