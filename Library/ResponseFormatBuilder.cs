@@ -15,6 +15,11 @@ namespace Library
      */
     public static class ResponseFormatBuilder
     {
+        public static object? CreateResponseFormat(string name, string schema)
+        {
+            return OpenAI.Chat.ChatResponseFormat.CreateJsonSchemaFormat(name, BinaryData.FromString(schema), jsonSchemaIsStrict: true);
+        }
+        
         public static string GetJsonSchema(Type formatObjectType, string? description = null)
         {
             var type = formatObjectType.IsGenericType && formatObjectType.GetGenericTypeDefinition() == typeof(Nullable<>)

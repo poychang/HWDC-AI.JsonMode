@@ -7,7 +7,7 @@ var request = new RequestToAI
 {
     Instruction = "請幫我解 2x+1=10 這個問題",
     ResponseModelName = nameof(QnA),
-    ResponseModelSchema = typeof(QnA).ToJsonSchema(),
+    ResponseModelSchema = typeof(QnA).ToJsonSchema(description: "回答問題的格式"),
 };
 
 var httpClient = HttpLogger.GetHttpClient(isShowLogging: true);

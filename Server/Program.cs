@@ -34,15 +34,12 @@ app.MapPost("/request-to-ai", async (RequestToAI request) =>
 
     var executionSettings = new AzureOpenAIPromptExecutionSettings()
     {
-        ResponseFormat = OpenAI.Chat.ChatResponseFormat.CreateJsonSchemaFormat(
-            request.ResponseModelName,
-            BinaryData.FromString(request.ResponseModelSchema),
-            jsonSchemaIsStrict: true),
+        ResponseFormat = ResponseFormatBuilder.CreateResponseFormat(request.ResponseModelName, request.ResponseModelSchema),
     };
     var response = await chatCompletionService.GetChatMessageContentAsync(request.Instruction, executionSettings);
 
     Console.WriteLine($"\x1b[34mRequest:\x1b[0m  {request.Instruction}");
-    Console.WriteLine($"\x1b[32mResponse:\x1b[0m {response}");
+    Console.WriteLine($"\x1b[32mResponse:\x1b[0m \n{response.ToString().ToIndented()}");
 
     return response.ToString();
 });
