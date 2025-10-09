@@ -22,9 +22,7 @@ namespace Library
         
         public static string GetJsonSchema(Type formatObjectType, string? description = null)
         {
-            var type = formatObjectType.IsGenericType && formatObjectType.GetGenericTypeDefinition() == typeof(Nullable<>)
-                ? Nullable.GetUnderlyingType(formatObjectType)!
-                : formatObjectType;
+            var type = Nullable.GetUnderlyingType(formatObjectType) ?? formatObjectType;
             var schema = AIJsonUtilities.CreateJsonSchema(
                 type,
                 description: string.IsNullOrEmpty(description) ? null : description,
